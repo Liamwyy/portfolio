@@ -1,6 +1,6 @@
 # 🌐 wyysitey
 
-> Welcome to my personal portfolio repository! This is a space where I showcase my projects, experiments, and creative work.
+> i will be displaying my stuff here
 
 
 <pre>
