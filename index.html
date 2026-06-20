@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wira Ye Yint </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <link rel="stylesheet" href="soul.css">
+</head>
+<body>
+  
+
+  <div class="body-layout">
+    <div class="mainframe-window" id="main-system-window">
+      
+      <img src="assets/images/sakura.png" class="decor-right-center">
+
+      <div class="os-title-bar">
+        <div class="title-bar-left">
+          <span>wyy.exe</span>
+        </div>
+        <div class="title-bar-controls">
+          <button class="win-btn win-minimize" id="sys-minimize" title="Minimize">_</button>
+          <button class="win-btn win-maximize" id="sys-maximize" title="Maximize">🗖</button>
+          <button class="win-btn win-close" id="sys-close" title="Close">X</button>
+        </div>
+      </div>
+
+      <div class="inner-site-bg site-workspace" id="window-workspace-content">
+        
+        <header class="header-container">
+          <div class="tech-accent-lines banner-ribbon">
+            <div class="tech-dots micro-dots-left"></div>
+            <div class="tech-dots micro-dots-right"></div>
+          </div>
+
+          <div class="metallic-panel nameplate-branding">
+            <img src="assets/ui_elements/ui2.svg" class="nameplate-top-center-decor" alt="Top Centered Decor">
+  
+  
+            <div class="branding-profile-group">
+              <div class="logo-outer-circle">
+                <img src="assets/images/hello.png" alt="Wira Ye Yint Logo" class="brand-logo-img">
+              </div>
+              <div class="branding-text">
+                <h1 class="font-logo company-title">WIRA YE YINT</h1>
+                
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="status-ribbon-bar">
+            <div class="status-left-group">
+              <div class="socials-inline-group">
+                <a href="https://github.com/Liamwyy" target="_blank" rel="noopener noreferrer" class="social-icon-wrapper" title="GitHub Profile">
+                  <img src="assets/images/github-logo.png" alt="GitHub" class="social-img-placeholder" onerror="this.style.backgroundColor='#1a2f4c'">
+                </a>
+                <a href="https://www.linkedin.com/in/ww-ww-048076370/" target="_blank" rel="noopener noreferrer" class="social-icon-wrapper" title="LinkedIn ">
+                  <img src="assets/images/linkedin.png" alt="LinkedIn" class="social-img-placeholder" onerror="this.style.backgroundColor='#1a2f4c'">
+                </a>
+                <a href="https://www.instagram.com/_liam.yy/" target="_blank" rel="noopener noreferrer" class="social-icon-wrapper" title="Instagram V">
+                  <img src="assets/images/instagram.png" alt="Instagram" class="social-img-placeholder" onerror="this.style.backgroundColor='#1a2f4c'">
+                </a>
+              </div>
+            </div>
+            <div class="welcome-terminal-text"> >Hello World;)< </div>
+          </div>
+        </header>
+
+        <main class="content-grid-system">
+          <aside class="sidebar-aside-column" id="mobile-drawer-sidebar">
+            <button id="drawer-toggle-btn">&gt;</button>
+            <div class="sidebar-nav-card">
+              <div class="sidebar-header-strip">
+                <div class="tech-dots dot-filler-left"></div>
+                <div class="header-indicator-boxes">
+                  <span class="square-node"></span>
+                  <span class="square-node"></span>
+                </div>
+              </div>
+              
+              <nav id="sidebar-nav" class="navigation-link-list">
+                <a href="#home" class="nav-btn state-active" data-target="home">Home</a>
+                <a href="#about" class="nav-btn" data-target="about">About Me</a>
+                <a href="#projects" class="nav-btn" data-target="projects">Projects</a>
+                <a href="#experience" class="nav-btn" data-target="experience">Experience</a>
+                <a href="#education" class="nav-btn" data-target="education">Education</a>
+              </nav>
+
+              <div class="sidebar-footer-strip">
+                <div class="tech-dots dot-filler-bottom"></div>
+              </div>
+            </div>
+          </aside>
+
+          <section class="display-screen-column">
+            <div class="metallic-panel display-screen-card">
+              <div class="screen-header-bar">
+                <div id="terminal-title" class="active-tab-title">
+                  . > Home
+                </div>
+                <div class="tech-dots target-dots-right"></div>
+              </div>
+
+              <div class="stage-viewport-wrapper">
+                <div id="window-viewport" class="scrollable-content-area sunken-inset-well">
+                  
+                  <div id="panel-home" class="view-panel">
+                    <div class="ps2-integrated-mainframe">
+                      <div class="mainframe-inner-subheader">
+                        <span class="ps2-card-header font-header">> Hello, I'm Wira Ye Yint</span>
+                        <span class="hardware-overview-tag">Brief</span>
+                      </div>
+                      <p>
+                         I'm a recent graduate from KMUTT with a B.Eng in Computer Engineering. I'm always trying to learn something new and expand my skill set.
+                      </p>
+                      <div class="skills-showcase-container">
+                          <div class="skills-header">
+                              <span class="skills-label">Tech I have experience with</span>
+                              <div class="skills-dots tech-dots"></div>
+                          </div>
+                          <div class="skills-bubble-grid">
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/jsicn.png" alt="JS" class="skill-bubble-img">
+                                     <span class="skill-name">JavaScript</span>
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/pyicn.png" alt="Python" class="skill-bubble-img">
+                                      <span class="skill-name">Python</span>
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/htmlicn.png" alt="HTML" class="skill-bubble-img">
+                                      
+                                      
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/cssicn.png" alt="CSS" class="skill-bubble-img">
+                                      
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/giticn.png" alt="Git" class="skill-bubble-img">
+                                      <span class="skill-name">Git</span>
+                                  </div>
+                                  </div>
+                                  <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/cicn.png" alt="C" class="skill-bubble-img">
+                                      <span class="skill-name">C</span>
+                                  </div>
+                              </div>
+                              </div>
+                      </div>
+                      <div id="home-projects-grid" class="frameless-projects-grid"></div>
+                      <div style="text-align: right; margin-top: 15px;">
+                        <a href="#" id="view-more-link" class="details-link">VIEW MORE &gt;&gt;</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="panel-about" class="view-panel hidden-panel-state">
+                    <div class="vision-heading-block">
+                      <h2 class="font-header section-pre-title">enVISION the</h2>
+                      <h3 class="font-header section-main-title">Future.</h3>
+                    </div>
+                    <div class="vision-body-layout">
+                      <div class="vision-arrow-icon-container">
+                        <div class="icon-arrow-box">↘</div>
+                      </div>
+                      <div class="vision-paragraphs-group">
+                        <p class="paragraph-justify">
+                         
+                        </p>
+                        <p class="paragraph-justify">
+                          
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div id="panel-projects" class="view-panel hidden-panel-state">
+                    <div class="ps2-integrated-mainframe">
+                      <div class="mainframe-inner-subheader">
+                        <span class="ps2-card-header font-header">> CLICK TO VIEW PROJECTS</span>
+                        <span class="hardware-overview-tag"></span>
+                      </div>
+                      <div id="ps2-card-grid" class="frameless-projects-grid"></div>
+                      <div class="hardware-boot-instruction">
+  <span class="instruction-text">All models created with Blender</span>
+  <pre class="cat-ascii">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠶⢦⡀⠀⠀⢀⣀⡀⠀⠀
+⠀⠀⠀⣀⣤⣄⡀⠀⠀⠀⠀⠀⠀⢠⠖⠒⢆⠀⠀⠀⡏⠀⠀⠀⠙⣇⡞⠋⠙⢿⣷⠀
+⠀⠀⢀⡟⠁⠉⠛⣧⠀⠀⠀⠀⣠⠇⠀⠀⠈⢇⠀⢸⠁⠀⠀⠀⠀⡟⠀⠀⠀⠀⣿⠃
+⠀⠀⣾⠃⠀⠀⠀⠈⠁⠒⠊⠉⠁⠀⠀⠀⠀⠘⢢⡈⡆⠀⠀⠀⣰⠃⠀⠀⠀⠀⡟⠀
+⠀⣀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠋⠙⠲⡄⠀⠁⠀⠀⠀⢀⣞⠁⠀
+⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⡼⠁⠀⠀⠀⢧⠀⠀⠀⠀⠐⠋⠀⢱⡀
+⡇⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠃⠀⣏⠀⠸⣄⡤⠇⠀⠀⢀⡞⠀⠀⠀⢠⠇
+⡇⠀⠀⠀⠉⠀⠀⢠⠀⣠⣄⣰⠀⠀⠀⠀⠀⠈⢧⡀⠀⠀⠀⠀⠀⢸⡀⠀⠀⡰⠃⠀
+⠙⣄⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀⠀⠀⣀⣀⣴⠿⠃⠀⠀⠀⠀⠀⢀⡛⠒⠚⠁⠀⠀
+⠀⠈⠳⠤⣀⣀⣀⣀⣀⣠⡤⠤⠔⠒⠈⠁⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡖⠦⠤⣄⣀⡤⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⡞⠁⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⢠⡛⣆⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠸⣇⣀⣴⢀⣧⠀⠀⠀⠀⠀⠀⠀⢀⡏⠣⣈⠙⠉⢁⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠉⠈⡇⢰⠒⠒⠒⢺⣠⠏⠀⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  </pre>
+</div>
+                    </div>
+                  </div>
+
+                  <div id="panel-experience" class="view-panel hidden-panel-state logging-layout-space">
+                    <h3 class="font-header log-title-header">> Experience Log</h3>
+                    <div class="log-data-card sunken-inset-well">
+                      <p class="log-company-name">AI Singapore</p>
+                      <p class="log-role-text">Data Annotation Specialist (Burmese Framework)</p>
+                    </div>
+                  </div>
+
+                  <div id="panel-education" class="view-panel hidden-panel-state logging-layout-space">
+                    <h3 class="font-header log-title-header">> Core Education</h3>
+                    <div class="education-text-container">
+                      <p><strong>2019-2021</strong> — IGCSE Completed</p>
+                      <p><strong>2022-2026</strong> — KMUTT B.Eng Computer Engineering Undergrad</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div id="custom-scroll-track" class="custom-scroll-track-bar">
+                  <div class="scroll-arrow-up">▲</div>
+                  <div id="scroll-ball"></div>
+                  <div class="scroll-arrow-down">▼</div>
+                </div>
+              </div>
+
+              <div class="display-screen-footer">
+                <div></div>
+                <div class="tech-dots status-footer-dots"></div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer-bottom-wrapper">
+         
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <div class="system-popup-modal-overlay" id="crash-alert-popup">
+    <div class="popup-box-window">
+      <div class="popup-header-strip">
+        <span>--ERROR--</span>
+      </div>
+      <div class="popup-message-body">
+        <p class="popup-text-content">wyy.exe cannot be terminated.</p>
+        <button class="popup-action-dismiss-btn" id="popup-close-trigger">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details-overlay" id="details-modal-overlay">
+    <div class="project-details-card">
+      <div class="details-header">
+        <span id="modal-project-title">PROJECT REGISTER DOCKET</span>
+        <button class="details-close-btn" id="details-close-trigger">✕</button>
+      </div>
+      <div class="details-body">
+        <div class="modal-showcase-image-slot sunken-inset-well" id="modal-image-container">
+          <span>Project Capture Asset Target</span>
+        </div>
+        <p class="details-description" id="modal-project-description"></p>
+        <div class="modal-tech-stack-container">
+          <span class="tech-stack-label">TECH STACK:</span>
+          <div class="tech-icons-row" id="modal-tech-icons-row">
+          </div>
+        </div>
+                 <a href="#" target="_blank" rel="noopener noreferrer" class="details-link" id="modal-project-link">Live Preview</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="details-link" id="modal-project-link">GitHub Link</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
