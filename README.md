@@ -1,7 +1,7 @@
 # 🌐 wyysitey
 
 > i will be displaying my stuff here
-
+>View on https://portfoliowyy.netlify.app/
 
 <pre>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⣀⣤⣀⠀⠀⣠⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
