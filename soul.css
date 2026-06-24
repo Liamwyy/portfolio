@@ -1366,14 +1366,10 @@ body {
 
 /* Socials — positioned just right of the name */
 .hud-socials-group {
-  position: absolute;
-  left: 340px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
-  z-index: 5;
+  margin-top: 6px;
 }
 
 /* Petal canvas — right side with left-edge fade */
