@@ -10,7 +10,8 @@ const projectModels = [
   { 
     title: "Article Analyzer", 
     file: "assets/models/aa.glb", 
-    link: "https://github.com/minmyataung54/CPE_393_MLOps",
+    link: null,
+    github: "https://github.com/minmyataung54/CPE_393_MLOps",
     description: "A machine learning pipeline for analyzing and processing Burmese articles and classifying them as crisis or non-crisis. Worked on creating a simple frontend using HTML+CSS and backend using FlaskAPI. Also trained on sckit-learn and uses current events and articles which are labelled by the team.",
     imagePlaceholder: "assets/images/mlops.png",
     techStack: ["Python", "FlaskAPI", "Docker", "Scikit-Learn"]
@@ -19,6 +20,7 @@ const projectModels = [
     title: "Nexus:KMUTT-AI-Service", 
     file: "assets/models/nexus.glb", 
     link: "https://nexus.dev.cpe.kmutt.ac.th/",
+    github: "https://github.com/aritatgml/open-webui/tree/my-deployment",
     description: "A centralized AI service platform for users to access both local and cloud-based AI models from various providers with a KMUTT account. Deployed on a Linux server with Docker and Caddy using MS AD authentication for user access control. Python was used to create tools and the optimizer which decides what model to use base on prompt.",
     imagePlaceholder: "assets/images/nexus.png",
     techStack: ["OpenWebUI", "Python", "Docker", "Linux Commands"]
@@ -139,7 +141,8 @@ if (sysMaximize && systemWindow) {
 const detailsOverlay = document.getElementById('details-modal-overlay');
 const detailsTitle = document.getElementById('modal-project-title');
 const detailsDesc = document.getElementById('modal-project-description');
-const detailsLink = document.getElementById('modal-project-link');
+const detailsLiveLink = document.getElementById('modal-live-link');
+const detailsGithubLink = document.getElementById('modal-github-link');
 const detailsClose = document.getElementById('details-close-trigger');
 const modalImageSlot = document.getElementById('modal-image-container');
 const modalTechIconsRow = document.getElementById('modal-tech-icons-row');
@@ -153,6 +156,7 @@ if (detailsClose && detailsOverlay) {
 function displayProjectDetails(index) {
   const data = projectModels[index];
   if (data && detailsOverlay) {
+    detailsOverlay.style.display = 'flex';
     detailsTitle.innerText = data.title;
     detailsDesc.innerText = data.description;
     
@@ -173,14 +177,21 @@ function displayProjectDetails(index) {
       modalTechIconsRow.appendChild(badge);
     });
 
-    detailsLink.href = data.link;
-    if (data.link === "#") {
-      detailsLink.style.display = 'none';
-    } else {
-      detailsLink.style.display = 'inline-block';
-      detailsLink.innerText = `GitHub Link`;
-    }
-    detailsOverlay.style.display = 'flex';
+    if (data.link) {
+  detailsLiveLink.href = data.link;
+  detailsLiveLink.style.display = 'inline-block';
+  detailsLiveLink.innerText = 'Live Site ↗';
+} else {
+  detailsLiveLink.style.display = 'none';
+}
+
+if (data.github) {
+  detailsGithubLink.href = data.github;
+  detailsGithubLink.style.display = 'inline-block';
+  detailsGithubLink.innerText = 'GitHub ↗';
+} else {
+  detailsGithubLink.style.display = 'none';
+}
   }
 }
 
@@ -486,4 +497,19 @@ window.addEventListener('resize', () => {
     requestAnimationFrame(animate);
   }
   animate();
+
+  const expOverlay = document.getElementById('experience-modal-overlay');
+const expModalClose = document.getElementById('experience-modal-close');
+
+document.getElementById('exp-trigger-1').addEventListener('click', () => {
+  expOverlay.style.display = 'flex';
+});
+
+expModalClose.addEventListener('click', () => {
+  expOverlay.style.display = 'none';
+});
+
+expOverlay.addEventListener('click', (e) => {
+  if (e.target === expOverlay) expOverlay.style.display = 'none';
+});
 })();

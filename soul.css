@@ -824,12 +824,15 @@ body {
 
 .project-details-card {
   width: 92%;
-  max-width: 500px;
+  max-width: 680px;
   background: rgba(220, 226, 234, 0.92);
   border: 3px solid #1a2f4c;
   border-radius: 6px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
   overflow: hidden;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .details-header {
@@ -862,7 +865,7 @@ body {
 
 .modal-showcase-image-slot {
   width: 100%;
-  height: 160px;
+  height: 300px;
   background-color: rgba(0,0,0,0.08);
   display: flex;
   align-items: center;
@@ -872,6 +875,14 @@ body {
   font-weight: bold;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  overflow: hidden;
+}
+
+.modal-showcase-image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .modal-placeholder-img {
@@ -1392,4 +1403,49 @@ body {
   .hud-name-text {
     font-size: 9px;
   }
+}
+.modal-links-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.experience-trigger {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.experience-trigger:hover {
+  opacity: 0.75;
+}
+
+.experience-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.experience-modal-card {
+  width: 92%;
+  max-width: 680px;
+  background: rgba(220, 226, 234, 0.97);
+  border: 3px solid #1a2f4c;
+  border-radius: 6px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+.experience-modal-body {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.experience-modal-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
