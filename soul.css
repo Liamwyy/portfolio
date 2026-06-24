@@ -1449,3 +1449,40 @@ body {
   height: auto;
   display: block;
 }
+
+.experience-trigger {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.experience-trigger:hover {
+  opacity: 0.75;
+}
+.experience-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.experience-modal-card {
+  width: 92%;
+  max-width: 680px;
+  background: rgba(220, 226, 234, 0.97);
+  border: 3px solid #1a2f4c;
+  border-radius: 6px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+.experience-modal-body {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.experience-modal-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

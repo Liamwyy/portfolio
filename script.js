@@ -497,12 +497,28 @@ window.addEventListener('resize', () => {
     requestAnimationFrame(animate);
   }
   animate();
+})();
 
-  const expOverlay = document.getElementById('experience-modal-overlay');
+const experiences = [
+  { id: "exp-trigger-1", title: "AI Singapore x VisTec",  images: ["assets/images/internship1.png"] },
+  { id: "exp-trigger-2", title: "Google Chaiyo GCP 2026", images: ["assets/images/gglch2.png", "assets/images/gglc.png"] },
+];
+
+const expOverlay    = document.getElementById('experience-modal-overlay');
 const expModalClose = document.getElementById('experience-modal-close');
+const expModalTitle = document.getElementById('experience-modal-title');
+const expModalImg   = document.getElementById('experience-modal-img');
 
-document.getElementById('exp-trigger-1').addEventListener('click', () => {
-  expOverlay.style.display = 'flex';
+experiences.forEach(exp => {
+  const trigger = document.getElementById(exp.id);
+  if (!trigger) return;
+  trigger.addEventListener('click', () => {
+    expModalTitle.innerText = exp.title;
+    expModalImg.innerHTML = exp.images.map(src =>
+      `<img src="${src}" alt="${exp.title}" class="experience-modal-img">`
+    ).join('');
+    expOverlay.style.display = 'flex';
+  });
 });
 
 expModalClose.addEventListener('click', () => {
@@ -512,4 +528,3 @@ expModalClose.addEventListener('click', () => {
 expOverlay.addEventListener('click', (e) => {
   if (e.target === expOverlay) expOverlay.style.display = 'none';
 });
-})();
