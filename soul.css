@@ -1479,3 +1479,7 @@ body {
   height: auto;
   display: block;
 }
+
+#home-projects-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
