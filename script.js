@@ -295,9 +295,7 @@ window.addEventListener('resize', () => {
 });
 
 
-/* ═══════════════════════════════════════
-   HUD HEADER — DECODE / ENCODE NAME EFFECT
-═══════════════════════════════════════ */
+
 (function() {
   const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%<>?/\\|{}';
   const TARGET = 'WIRA YE YINT';
@@ -394,9 +392,7 @@ window.addEventListener('resize', () => {
   setTimeout(() => requestAnimationFrame(tick), 500);
 })();
 
-/* ═══════════════════════════════════════
-   HUD HEADER — PETAL / BIT-LEAF ANIMATION
-═══════════════════════════════════════ */
+
 (function() {
   const canvas = document.getElementById('hud-petals');
   if (!canvas) return;
