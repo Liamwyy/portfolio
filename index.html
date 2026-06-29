@@ -36,7 +36,7 @@
 
           
           <div class="hud-header-wrap">
-            <!-- SVG frame overlay -->
+            
             <svg class="hud-svg-frame" viewBox="0 0 960 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
               
               <polygon points="20,0 940,0 960,20 960,70 940,90 20,90 0,70 0,20" fill="none" stroke="#888" stroke-width="1.5"/>
@@ -91,7 +91,7 @@
           <div class="hud-name-wrap">
   <img src="assets/images/hello.png" alt="Profile" class="hud-profile-img">
   <div>
-    <h1 id="hud-name-display" class="hud-name-text">WIRA YE YINT</h1>
+    <h1 id="hud-name-display" class="hud-name-text">Wira Ye Yint</h1>
     <div class="hud-socials-group">
       <a href="https://github.com/Liamwyy" target="_blank" rel="noopener noreferrer" class="social-icon-wrapper" title="GitHub">
         <img src="assets/images/github-logo.png" alt="GitHub" class="social-img-placeholder" onerror="this.style.backgroundColor='#1a2f4c'">
@@ -114,31 +114,59 @@
 
         </header>
 
-        <main class="content-grid-system">
-          <aside class="sidebar-aside-column" id="mobile-drawer-sidebar">
-            <button id="drawer-toggle-btn">&gt;</button>
-            <div class="sidebar-nav-card">
-              <div class="sidebar-header-strip">
-                <div class="tech-dots dot-filler-left"></div>
-                <div class="header-indicator-boxes">
-                  <span class="square-node"></span>
-                  <span class="square-node"></span>
-                </div>
-              </div>
-              
-              <nav id="sidebar-nav" class="navigation-link-list">
-                <a href="#home" class="nav-btn state-active" data-target="home">Home</a>
-                <a href="#about" class="nav-btn" data-target="about">About Me</a>
-                <a href="#projects" class="nav-btn" data-target="projects">Projects</a>
-                <a href="#experience" class="nav-btn" data-target="experience">Experience</a>
-                <a href="#education" class="nav-btn" data-target="education">Education</a>
-              </nav>
+   <main class="content-grid-system">
+  <div class="sidebar-left-col">
+    <aside class="sidebar-aside-column" id="mobile-drawer-sidebar">
+      <button id="drawer-toggle-btn">&gt;</button>
+      <div class="sidebar-nav-card">
+        <div class="sidebar-header-strip">
+          <div class="tech-dots dot-filler-left"></div>
+          <div class="header-indicator-boxes">
+            <span class="square-node"></span>
+            <span class="square-node"></span>
+          </div>
+        </div>
 
-              <div class="sidebar-footer-strip">
-                <div class="tech-dots dot-filler-bottom"></div>
-              </div>
-            </div>
-          </aside>
+        <nav id="sidebar-nav" class="navigation-link-list">
+          <a href="#home" class="nav-btn state-active" data-target="home">Home</a>
+         <!-- <a href="#about" class="nav-btn" data-target="about">About Me</a> -->
+          <a href="#projects" class="nav-btn" data-target="projects">Projects</a>
+          <a href="#experience" class="nav-btn" data-target="experience">Experience</a>
+          <a href="#education" class="nav-btn" data-target="education">Education</a>
+          <a href="#" id="resume-view-trigger" class="nav-btn resume-trigger-accent" data-resume="true"> View Resume </a>
+        </nav>
+
+        <div class="sidebar-footer-strip">
+          <div class="tech-dots dot-filler-bottom"></div>
+        </div>
+      </div>
+    </aside>
+
+    
+    <div class="extra-sidebar-widget">
+      <div class="sidebar-nav-card">
+        <div class="sidebar-header-strip">
+          <span class="header-label">Contact</span>
+          
+          <div class="header-indicator-boxes">
+            
+            
+          </div>
+        </div>
+        <div class="extra-widget-body">
+  <img src="assets/images/email.png" alt="Email" class="social-img-placeholder" onerror="this.style.backgroundColor='#1a2f4c'">
+  <div class="extra-widget-text">
+    
+    <span class="extra-widget-email"><a href="mailto:liamrezy123@gmail.com" class="extra-widget-email">liamrezy123@gmail.com</a></span>
+  </div>
+</div>
+        <div class="sidebar-footer-strip">
+          <div class="tech-dots dot-filler-bottom"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
           <section class="display-screen-column">
             <div class="metallic-panel display-screen-card">
@@ -159,9 +187,8 @@
                         <span class="hardware-overview-tag">Brief</span>
                       </div>
                       <p>
-                         I'm a recent graduate from KMUTT with a B.Eng in Computer Engineering. I'm always trying to learn something new and expand my skill set.<br>
-                         <p>!TO BE CONTINUED!</p>
-                      </p>
+                         I'm a recent graduate from KMUTT with a B.Eng in Computer Engineering and I'm always trying to learn something new and expand my skill set. Really looking forward to new opportunities and expanding this portfolio:)<br>
+                         
                       <div class="skills-showcase-container">
                           <div class="skills-header">
                               <span class="skills-label">Tech I have experience with</span>
@@ -211,6 +238,24 @@
                                       <span class="skill-name">Blender</span>
                                   </div>
                               </div>
+                               <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/figma.png" alt="Figma" class="skill-bubble-img">
+                                      <span class="skill-name">Figma</span>
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/docker.png" alt="Docker" class="skill-bubble-img">
+                                      
+                                  </div>
+                              </div>
+                              <div class="skill-bubble-item">
+                                  <div class="bubble-glass-effect">
+                                      <img src="assets/images/sql.png" alt="SQL" class="skill-bubble-img">
+                                      
+                                  </div>
+                              </div>
                               </div>
                       </div>
                    <span class="skills-label">Pinned Projects</span>
@@ -232,7 +277,7 @@
                       </div>
                       <div class="vision-paragraphs-group">
                         <p class="paragraph-justify">
-                         !WORK IN PROGRESS! This section is under construction. Please check back later for updates.
+                          
                         <p class="paragraph-justify">
                           
                         </p>
@@ -358,13 +403,24 @@
       <span id="experience-modal-title"></span>
       <button class="details-close-btn" id="experience-modal-close">✕</button>
     </div>
-    <div class="experience-modal-body">
+    
     <div class="experience-modal-body">
   <div id="experience-modal-img"></div>
 </div>
     </div>
   </div>
 </div>
+
+<div class="resume-modal-overlay" id="resume-modal-overlay">
+    <div class="resume-modal-card">
+      <div class="details-header">
+        <span></span> <button class="details-close-btn" id="resume-modal-close">✕</button>
+      </div>
+      <div class="resume-modal-body">
+        <iframe id="resume-iframe" src="assets/resume.pdf" class="resume-iframe"></iframe>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

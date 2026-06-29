@@ -35,7 +35,7 @@ const projectModels = [
   }
 ];
 
-const navButtons = document.querySelectorAll('#sidebar-nav .nav-btn');
+const navButtons = document.querySelectorAll('#sidebar-nav .nav-btn:not([data-resume])');
 const panels = document.querySelectorAll('.view-panel');
 const terminalTitle = document.getElementById('terminal-title');
 const viewport = document.getElementById('window-viewport');
@@ -126,15 +126,51 @@ if (sysMinimize && systemWindow) {
   sysMinimize.addEventListener('click', () => {
     systemWindow.classList.remove('system-state-maximized');
     systemWindow.classList.toggle('system-state-minimized');
-    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 400);
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+      resizeAllRenderers();
+      updateScrollbar();
+    }, 450);
   });
 }
+
+const stageViewport = document.querySelector('.stage-viewport-wrapper');
+const contentGrid   = document.querySelector('.content-grid-system');
+const displayCol    = document.querySelector('.display-screen-column');
+const siteWorkspace = document.getElementById('window-workspace-content');
+
+function applyMaximizedStyles() {
+  if (siteWorkspace) { siteWorkspace.style.height = 'calc(100vh - 36px)'; siteWorkspace.style.minHeight = '0'; siteWorkspace.style.overflow = 'hidden'; }
+  if (contentGrid)   { contentGrid.style.flexGrow = '1'; contentGrid.style.alignItems = 'stretch'; contentGrid.style.minHeight = '0'; contentGrid.style.overflow = 'hidden'; }
+  if (displayCol)    { displayCol.style.height = '100%'; displayCol.style.minHeight = '0'; displayCol.style.overflow = 'hidden'; }
+  if (stageViewport) { stageViewport.style.height = 'auto'; stageViewport.style.flexGrow = '1'; stageViewport.style.minHeight = '0'; stageViewport.style.overflow = 'hidden'; }
+}
+
+function removeMaximizedStyles() {
+  if (siteWorkspace) { siteWorkspace.style.height = ''; siteWorkspace.style.minHeight = ''; siteWorkspace.style.overflow = ''; }
+  if (contentGrid)   { contentGrid.style.flexGrow = ''; contentGrid.style.alignItems = ''; contentGrid.style.minHeight = ''; contentGrid.style.overflow = ''; }
+  if (displayCol)    { displayCol.style.height = ''; displayCol.style.minHeight = ''; displayCol.style.overflow = ''; }
+  if (stageViewport) { stageViewport.style.height = ''; stageViewport.style.flexGrow = ''; stageViewport.style.minHeight = ''; stageViewport.style.overflow = ''; }
+}
+
+
 
 if (sysMaximize && systemWindow) {
   sysMaximize.addEventListener('click', () => {
     systemWindow.classList.remove('system-state-minimized');
+    const wasMaximized = systemWindow.classList.contains('system-state-maximized');
     systemWindow.classList.toggle('system-state-maximized');
-    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 400);
+    if (wasMaximized) {
+      removeMaximizedStyles();
+    } else {
+      applyMaximizedStyles();
+    }
+    
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+      resizeAllRenderers();
+      updateScrollbar();
+    }, 450);
   });
 }
 
@@ -282,23 +318,37 @@ function globalRenderLoop(time) {
 }
 requestAnimationFrame(globalRenderLoop);
 
-window.addEventListener('resize', () => {
-  activeScenes.forEach(item => {
-    const w = item.containerElement.clientWidth;
-    if (w > 0) {
-      item.camera.aspect = w / 90;
-      item.camera.updateProjectionMatrix();
-      item.renderer.setSize(w, 90);
-    }
-  });
 
-});
+function resizeAllRenderers() {
+  activeScenes.forEach(item => {
+    const card  = item.containerElement.parentElement;       
+    const grid  = card  ? card.parentElement  : null;        
+    const gridW = grid  ? grid.getBoundingClientRect().width : 0;
+    const cols  = gridW > 400 ? 2 : 1;
+    
+    const w     = gridW > 0 ? Math.max(1, Math.floor(gridW / cols) - 24)
+                             : Math.max(1, item.containerElement.getBoundingClientRect().width);
+    item.camera.aspect = w / 90;
+    item.camera.updateProjectionMatrix();
+    item.renderer.setSize(w, 90, false);
+    item.renderer.domElement.style.width  = '100%';
+    item.renderer.domElement.style.height = '90px';
+  });
+}
+
+
+let _resizeTimer = null;
+function debouncedResize() {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(resizeAllRenderers, 80);
+}
+window.addEventListener('resize', debouncedResize);
 
 
 
 (function() {
   const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%<>?/\\|{}';
-  const TARGET = 'WIRA YE YINT';
+  const TARGET = 'Wira Ye Yint';
   const nameEl = document.getElementById('hud-name-display');
   if (!nameEl) return;
 
@@ -400,11 +450,22 @@ window.addEventListener('resize', () => {
 
   function resize() {
     const r = canvas.parentElement.getBoundingClientRect();
-    canvas.width = r.width || 300;
-    canvas.height = r.height || 90;
+    const w = Math.round(r.width)  || 300;
+    const h = Math.round(r.height) || 90;
+    
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
   }
   resize();
-  window.addEventListener('resize', resize);
+
+  
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(resize).observe(canvas.parentElement);
+  } else {
+    window.addEventListener('resize', resize);
+  }
 
   const COUNT = 22;
   const petals = [];
@@ -524,3 +585,28 @@ expModalClose.addEventListener('click', () => {
 expOverlay.addEventListener('click', (e) => {
   if (e.target === expOverlay) expOverlay.style.display = 'none';
 });
+
+const resumeOverlay  = document.getElementById('resume-modal-overlay');
+const resumeClose    = document.getElementById('resume-modal-close');
+const resumeTrigger  = document.getElementById('resume-view-trigger');
+
+if (resumeTrigger) {
+  resumeTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (resumeOverlay) resumeOverlay.style.display = 'flex';
+  });
+}
+
+if (resumeClose && resumeOverlay) {
+  resumeClose.addEventListener('click', () => {
+    resumeOverlay.style.display = 'none';
+  });
+}
+
+if (resumeOverlay) {
+  resumeOverlay.addEventListener('click', (e) => {
+    if (e.target === resumeOverlay) {
+      resumeOverlay.style.display = 'none';
+    }
+  });
+}
